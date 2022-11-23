@@ -41,11 +41,20 @@ public class App extends Application {
                     food.generateFood();
                     snake.grow();
                 }
+                if (snake.isSnakeEatingItself()) {
+                    System.out.println("Game Over");
+
+                    System.exit(0);
+                }
             } else if (event.getCode() == KeyCode.DOWN) {
                 snake.moveDown();
                 if (isSnakeEatingFood()) {
                     food.generateFood();
                     snake.grow();
+                }
+                if (snake.isSnakeEatingItself()) {
+                    System.out.println("Game Over");
+                    System.exit(0);
                 }
             } else if (event.getCode() == KeyCode.RIGHT) {
                 snake.moveRight();
@@ -53,11 +62,21 @@ public class App extends Application {
                     food.generateFood();
                     snake.grow();
                 }
+                if (snake.isSnakeEatingItself()) {
+                    System.out.println("Game Over");
+
+                    System.exit(0);
+                }
             } else if (event.getCode() == KeyCode.LEFT) {
                 snake.moveLeft();
                 if (isSnakeEatingFood()) {
                     food.generateFood();
                     snake.grow();
+                }
+                if (snake.isSnakeEatingItself()) {
+                    System.out.println("Game Over");
+
+                    System.exit(0);
                 }
             }
         });

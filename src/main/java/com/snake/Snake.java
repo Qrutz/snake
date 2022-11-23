@@ -25,20 +25,15 @@ public class Snake {
         }
     }
 
-    // public Snake() {
-    // head.setX(100);
-    // head.setY(100);
-    // body.setX(90);
-    // body.setY(100);
-    // tail.setX(80);
-    // tail.setY(100);
-
-    // App.root.getChildren().add(head);
-    // App.root.getChildren().add(body);
-    // App.root.getChildren().add(tail);
-    // }
-
-    // get head function
+    public boolean isSnakeEatingItself() {
+        for (int i = 1; i < bodyParts.size(); i++) {
+            if (bodyParts.get(0).getX() == bodyParts.get(i).getX()
+                    && bodyParts.get(0).getY() == bodyParts.get(i).getY()) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public void moveUp() {
         // account for when the snake grows
